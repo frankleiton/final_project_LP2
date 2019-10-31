@@ -16,6 +16,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
 import javafx.stage.FileChooser;
+import javafx.stage.FileChooser.ExtensionFilter;
 
 public class ViewController {
 	
@@ -36,12 +37,14 @@ public class ViewController {
 		Knn knn = new Knn();
 
 		FileChooser fc = new FileChooser();
+		FileChooser.ExtensionFilter extFilter = new FileChooser.ExtensionFilter("Image Files", "*.png");
+		fc.getExtensionFilters().add(extFilter);
 		File selectedFile = fc.showOpenDialog(null);
 		
 		if (selectedFile != null) {
 			label_urlImage.setText("imagem Selecionada: "+selectedFile.getAbsolutePath());
 			
-			System.out.println(knn.knn(getDataset(),h.resizeImgame(selectedFile.getAbsolutePath()),10));
+			System.out.println(knn.knn(getDataset(),h.resizeImgame(selectedFile.getAbsolutePath()),3));
 			
 		}else {
 			label_urlImage.setText("Imagem invalida");
@@ -54,7 +57,7 @@ public class ViewController {
 		ArrayList<Image> images = new ArrayList<Image>();
 		
 		try {
-			List<String> lines = Files.readAllLines(Paths.get("src/resources/dataset.csv"));
+			List<String> lines = Files.readAllLines(Paths.get("src/resources/dataset_2019_1.csv"));
 			
 			String classType = null;
 			for (int i = 1; i < lines.size(); i++) {
