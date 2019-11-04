@@ -7,9 +7,9 @@
 
 <AnchorPane xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.imd.control.PrincipalController">
    <children>
-      <Pane prefHeight="400.0" prefWidth="400.0">
+      <Pane layoutX="-8.0" layoutY="-26.0" prefHeight="400.0" prefWidth="400.0" style="-fx-padding: 30px;">
          <children>
-            <Button fx:id="button_selectImage" layoutX="34.0" layoutY="70.0" mnemonicParsing="false" onAction="#ButtonSelectImage" onMouseClicked="#ButtonSelectImage" text="Selecionar Imagem" />
+            <Button fx:id="button_selectImage" layoutX="28.0" layoutY="58.0" mnemonicParsing="false" onAction="#ButtonSelectImage" onMouseClicked="#ButtonSelectImage" text="Selecionar Imagem" />
             <Label fx:id="label_urlImage" layoutX="34.0" layoutY="123.0" text="Imagem selecionada: " />
             <Button fx:id="button_scanImage" layoutX="86.0" layoutY="175.0" mnemonicParsing="false" text="Escanear" />
          </children>
