@@ -1,4 +1,5 @@
 package br.imd.control;
+
 import java.util.ArrayList;
 
 import br.imd.model.Distancia;
@@ -25,9 +26,9 @@ public class DistanciaManhattan extends Distancia {
 			}
 			result.add(new ImageResult(distancia, img.getClassType()));
 		}
-		
+
 		return result;
-		
+
 	}
-	
+
 }

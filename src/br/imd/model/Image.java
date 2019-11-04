@@ -1,12 +1,13 @@
 package br.imd.model;
+
 import java.util.Arrays;
 
 public class Image {
-		
+
 	private double[] dados;
 	private String classType;
-	
-	public Image(double[] dados, String classType){
+
+	public Image(double[] dados, String classType) {
 		this.dados = dados;
 		this.classType = classType;
 	}
@@ -31,6 +32,5 @@ public class Image {
 	public void setClassType(String classType) {
 		this.classType = classType;
 	}
-	
-	
+
 }
