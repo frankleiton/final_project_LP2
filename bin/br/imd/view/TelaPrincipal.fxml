@@ -1,37 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.ChoiceBox?>
-<?import javafx.scene.control.ContextMenu?>
+<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.MenuItem?>
-<?import javafx.scene.control.ProgressIndicator?>
-<?import javafx.scene.image.Image?>
+<?import javafx.scene.control.ProgressBar?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
 
-<AnchorPane xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.imd.control.ViewController">
+<AnchorPane xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.imd.control.ViewController">
    <children>
-      <Pane prefHeight="388.0" prefWidth="414.0" style="-fx-padding: 30px;">
+      <Pane prefHeight="400.0" prefWidth="400.0" style="-fx-background-color: #FFF;">
          <children>
-            <Button fx:id="buttonSelectImage" layoutX="28.0" layoutY="58.0" mnemonicParsing="false" onAction="#ButtonSelectImage" onMouseClicked="#ButtonSelectImage" text="Selecionar Imagem" />
-            <Label fx:id="labelUrlImage" layoutX="34.0" layoutY="123.0" text="Imagem selecionada: " />
-            <Button fx:id="buttonSelectImage" layoutX="243.0" layoutY="224.0" mnemonicParsing="false" text="Escanear" />
-            <Label layoutX="34.0" layoutY="183.0" text="Selecione uma distancia:" />
-            <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="14.0" layoutY="236.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../../../resources/linda.jpg" />
-               </image>
-            </ImageView>
-            <ChoiceBox fx:id="choiceBoxSelectdistance" layoutX="200.0" layoutY="179.0" prefWidth="150.0">
-               <contextMenu>
-                  <ContextMenu fx:id="coisas" onAction="#selectDistance">
-                     <items>
-                        <MenuItem mnemonicParsing="false" text="Unspecified Action" />
-                     </items></ContextMenu>
-               </contextMenu></ChoiceBox>
-            <ProgressIndicator layoutX="251.0" layoutY="278.0" progress="0.0" />
+            <Button fx:id="buttonSelectImage" layoutX="26.0" layoutY="29.0" mnemonicParsing="false" onAction="#ButtonSelectImage" onMouseClicked="#ButtonSelectImage" text="Selecionar Imagem" />
+            <Label fx:id="labelUrlImage" layoutX="99.0" layoutY="152.0" text="Imagem selecionada" />
+            <Button fx:id="button_scan" layoutX="261.0" layoutY="140.0" mnemonicParsing="false" onAction="#scanImage" prefHeight="25.0" prefWidth="115.0" text="Escanear" />
+            <Label layoutX="27.0" layoutY="92.0" text="Selecione uma distancia:" />
+            <ProgressBar fx:id="pb_loadBar" layoutX="14.0" layoutY="356.0" prefHeight="18.0" prefWidth="369.0" progress="0.0" />
+            <ImageView fx:id="imageView_imgSelected" fitHeight="175.0" fitWidth="222.0" layoutX="96.0" layoutY="170.0" pickOnBounds="true" preserveRatio="true" />
+            <ComboBox fx:id="comboBox_selectDistancia" layoutX="164.0" layoutY="88.0" onAction="#comboSelect" prefHeight="25.0" prefWidth="222.0" />
            </children>
       </Pane>
    </children>

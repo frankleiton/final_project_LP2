@@ -5,13 +5,12 @@ import java.util.Collections;
 
 import br.imd.control.ClassPredominante;
 import br.imd.control.CompararDistancia;
-import br.imd.control.DistanciaEucidiana;
-import br.imd.control.DistanciaManhattan;
 
 public class Knn {
 
-	public String knn(ArrayList<Image> images, double[] image, int k) {
-		Distancia distancia = new DistanciaManhattan();
+	public String knn(ArrayList<Imagem> images, double[] image, int k, Distancia dist) {
+		
+		Distancia distancia = dist;
 
 		ArrayList<ImageResult> result = distancia.distancia(image, images);
 

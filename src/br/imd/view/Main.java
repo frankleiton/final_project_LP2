@@ -23,13 +23,14 @@ public class Main extends Application {
 		try {
 			
 			primeiro = primaryStage;
-			primeiro.setTitle("Projeto LP II");
+			primeiro.setTitle("É Pessoa ?");
 			
 			FXMLLoader loader = new FXMLLoader();
 			loader.setLocation(Main.class.getResource("TelaPrincipal.fxml"));
 			tlPrincipal = (AnchorPane) loader.load();
 			
-			Scene scene = new Scene(tlPrincipal);
+			Scene scene = new Scene(tlPrincipal, 400, 400);
+			scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
 			
 			primaryStage.setScene(scene);
 			primaryStage.show();
