@@ -10,6 +10,7 @@ import java.util.ResourceBundle;
 
 import br.imd.model.Imagem;
 import br.imd.model.Knn;
+import br.imd.telegram.Telegram;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -103,6 +104,7 @@ public class ViewController implements Initializable {
 	public void calcularKnn(String imageURL, String typeDist) {
 		Hog h = new Hog();
 		Knn knn = new Knn();
+		Telegram chat = new Telegram();
 		String is_person = null;
 
 		if (typeDist.equals("Euclidiana")) {
@@ -115,9 +117,11 @@ public class ViewController implements Initializable {
 
 		if (is_person.equals("person")) 
 		{
+			chat.sendMessage("Passou alguem por ai!");
 			pb_loadBar.setProgress(1.0);
 			pb_loadBar.getStyleClass().add("green-bar");
 		}else {
+			chat.sendMessage("Alarme falso, ufa");
 			pb_loadBar.setProgress(1.0);
 			pb_loadBar.getStyleClass().add("red-bar");
 		}
