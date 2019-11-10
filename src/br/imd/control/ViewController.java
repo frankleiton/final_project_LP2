@@ -57,17 +57,17 @@ public class ViewController implements Initializable {
 	}
 
 	private void carregarDistancias() {
-		ObservableList<String> options = FXCollections.observableArrayList("Euclidiana", "Manhattan", "Chebychev");
+		ObservableList<String> options = FXCollections.observableArrayList("Euclidiana", "Manhattan");
 
 		comboBox_selectDistancia.setItems(options);
 	}
 	
 	public void openFolderNotPerson() throws IOException {
-		Runtime.getRuntime().exec("explorer.exe C:\\Pessoa\\");
+		Runtime.getRuntime().exec("explorer.exe C:\\NaoPessoa\\");
 	}
 	
 	public void openFolderPerson() throws IOException {
-		Runtime.getRuntime().exec("explorer.exe C:\\NotPessoa\\");
+		Runtime.getRuntime().exec("explorer.exe C:\\Pessoa\\");
 	}
 	
 	public void ButtonSelectImage(ActionEvent event) {
@@ -131,7 +131,7 @@ public class ViewController implements Initializable {
 			
 			System.out.println("não Pessoa");
 			
-			moveFiles(img, "C:\\NotPessoa\\");
+			moveFiles(img, "C:\\NaoPessoa\\");
 		}
 	}
 	
