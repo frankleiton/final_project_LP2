@@ -79,8 +79,6 @@ public class ViewController implements Initializable {
 		fc.getExtensionFilters().add(extFilter);
 		List<File> selectedFile = fc.showOpenMultipleDialog(null);
 		
-		
-
 		if (selectedFile != null) {
 			
 			for (File file : selectedFile) {
@@ -97,7 +95,6 @@ public class ViewController implements Initializable {
 		
 		if (imagesSelected.size() > 0  && distSelected != null) {
 			for (File imgSelected : imagesSelected) {
-				System.out.println(imgSelected);
 				calcularKnn(imgSelected, distSelected);		
 			}
 			
@@ -117,7 +114,7 @@ public class ViewController implements Initializable {
 			is_person = knn.knn(getDataset(), h.resizeImgame(img.getAbsolutePath()), 3, new DistanciaEucidiana());
 		} else if (typeDist.equals("Manhattan")) {
 			is_person = knn.knn(getDataset(), h.resizeImgame(img.getAbsolutePath()), 3, new DistanciaManhattan());
-		}else{
+		}else if (typeDist.equals("Chebychev")){
 			is_person = knn.knn(getDataset(),h.resizeImgame(img.getAbsolutePath()), 3, new DistanciaChebychev());
 		}
 		
@@ -125,13 +122,10 @@ public class ViewController implements Initializable {
 
 		if (is_person.equals("person")) 
 		{
-			System.out.println("Pessoa");
-
 			moveFiles(img, "C:\\Pessoa\\");
 			
 		}else{
 			
-			System.out.println("não Pessoa");
 			
 			moveFiles(img, "C:\\NaoPessoa\\");
 		}
@@ -163,7 +157,7 @@ public class ViewController implements Initializable {
 	private ArrayList<Imagem> getDataset() {
 
 		ArrayList<Imagem> images = new ArrayList<Imagem>();
-
+		
 		try {
 			List<String> lines = Files.readAllLines(Paths.get("src/resources/dataset_2019_1.csv"));
 
@@ -184,13 +178,12 @@ public class ViewController implements Initializable {
 				}
 
 				images.add(new Imagem(f, classType));
-
 			}
 
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-
+		
 		return images;
 	}
 }

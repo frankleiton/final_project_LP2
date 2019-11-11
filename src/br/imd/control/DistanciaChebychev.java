@@ -14,12 +14,16 @@ public class DistanciaChebychev extends Distancia {
 		ArrayList<ImageResult> result = new ArrayList<ImageResult>();
 		
 		for(Imagem img : images) {
-			double distancia = 0;
+			double distancia = 0, aux = 0;
 			for (int i = 0; i < img.getDados().length; i++) {
 				distancia = img.getDados()[i] - image[i];
-				result.add(new ImageResult(distancia, img.getClassType()));
+				
+				if (aux > distancia) {
+					distancia = aux;
+				}
 			}
-		
+			
+			result.add(new ImageResult(distancia, img.getClassType()));
 		}
 		
 		return result;
