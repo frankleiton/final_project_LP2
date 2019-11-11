@@ -57,7 +57,7 @@ public class ViewController implements Initializable {
 	}
 
 	private void carregarDistancias() {
-		ObservableList<String> options = FXCollections.observableArrayList("Euclidiana", "Manhattan");
+		ObservableList<String> options = FXCollections.observableArrayList("Euclidiana", "Manhattan", "Chebychev");
 
 		comboBox_selectDistancia.setItems(options);
 	}
@@ -117,6 +117,8 @@ public class ViewController implements Initializable {
 			is_person = knn.knn(getDataset(), h.resizeImgame(img.getAbsolutePath()), 3, new DistanciaEucidiana());
 		} else if (typeDist.equals("Manhattan")) {
 			is_person = knn.knn(getDataset(), h.resizeImgame(img.getAbsolutePath()), 3, new DistanciaManhattan());
+		}else{
+			is_person = knn.knn(getDataset(),h.resizeImgame(img.getAbsolutePath()), 3, new DistanciaChebychev());
 		}
 		
 		
