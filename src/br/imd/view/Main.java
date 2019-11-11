@@ -40,10 +40,16 @@ public class Main extends Application {
 			primaryStage.setScene(scene);
 			primaryStage.show();
 			
-			File diretorioP = new File("C:\\Pessoa");
-			diretorioP.mkdir();
-			File diretorioNP = new File("C:\\NaoPessoa");
-			diretorioNP.mkdir();
+			try {
+				File diretorioP = new File("C:\\Pessoa");
+				diretorioP.mkdir();
+				
+				File diretorioNP = new File("C:\\NaoPessoa");
+				diretorioNP.mkdir();
+			} catch (Exception e) {
+				System.out.println(e.getMessage());
+			}
+			
 
 		} catch (Exception e) {
 			e.printStackTrace();
